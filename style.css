@@ -115,6 +115,9 @@ body {
   font-size: 20px;
   margin-left: 10px;
 }
+.content .btn:hover {
+  background-color: green;
+}
 .result__detail li:not(:first-child) span {
   font-weight: 500;
 }
