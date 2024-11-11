@@ -1,0 +1,123 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: aqua;
+}
+.wrapper {
+  background-color: white;
+  width: 770px;
+  padding: 35px;
+  border-radius: 10px;
+}
+.wrapper .content__box {
+  padding: 13px 10px 0px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+.content__box .typing__text {
+  max-height: 255px;
+  overflow-y: auto;
+}
+.typing__text::-webkit-scrollbar {
+  width: 0;
+}
+.typing__text p {
+  font-size: 21px;
+  text-align: justify;
+  letter-spacing: 1px;
+  word-break: break-all;
+}
+.typing__text p span {
+  position: relative;
+}
+.typing__text p span.correct {
+  color: #56964f;
+}
+.typing__text p span.active {
+  color: rgb(0, 21, 255);
+  font-weight: 500;
+}
+.typing__text p span.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  opacity: 0;
+  background: #17a2b8;
+  animation: blink 1s ease-in-out infinite;
+}
+@keyframes blink {
+  50% {
+    opacity: 1;
+  }
+}
+
+.typing__text p span.incorrect {
+  border-radius: 4px;
+  color: red;
+  background-color: #ffc0cb;
+}
+.content__box .content {
+  display: flex;
+  margin-top: 17px;
+  padding: 10px 0;
+  border-top: 1px solid #ccc;
+  justify-content: space-between;
+}
+.content .result__detail {
+  display: flex;
+  height: 22px;
+  justify-content: space-between;
+  width: calc(100% - 140px);
+}
+.wrapper .input__field {
+  z-index: -999;
+  opacity: 0;
+  position: absolute;
+}
+.result__detail li {
+  list-style: none;
+  height: 22px;
+  display: flex;
+  align-items: center;
+}
+.result__detail li p {
+  font-size: 19px;
+}
+.result__detail li:not(:first-child) {
+  border-left: 1px solid #ccc;
+  padding-left: 22px;
+}
+.content .btn {
+  width: 100px;
+  height: 30px;
+  background-color: aqua;
+  border: 0;
+  border-radius: 5px;
+  color: white;
+  font-size: 15px;
+  transition: transform 0.3s ease;
+}
+.content .btn:active {
+  transform: scale(0.97);
+}
+.result__detail li span {
+  display: block;
+  font-size: 20px;
+  margin-left: 10px;
+}
+.result__detail li:not(:first-child) span {
+  font-weight: 500;
+}
+.result__detail li b {
+  font-weight: 500px;
+}
